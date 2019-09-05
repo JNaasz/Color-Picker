@@ -1,0 +1,196 @@
+.text-tab .holder .color-block .color-buttons #apply-text, .text-tab .holder .color-block .color-buttons #clear-text {
+  height: 50px;
+  border: solid 1px #003358;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  color: #003358;
+  font-size: 15px;
+  cursor: pointer; }
+
+.text-tab {
+  display: flex;
+  flex-flow: column nowrap;
+  border: solid 1px #C9C9C9;
+  border-top: none;
+  flex: 1 1 auto;
+  position: relative; }
+  .text-tab #no-text {
+    display: none;
+    justify-content: center;
+    padding-top: 50px; }
+  .text-tab .holder {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; }
+    .text-tab .holder .color-block {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end; }
+      .text-tab .holder .color-block #color-selected {
+        margin: 20px 0;
+        height: 100px;
+        padding: 5px;
+        display: flex;
+        justify-content: flex-start;
+        border: 1px solid gray;
+        overflow: hidden; }
+        .text-tab .holder .color-block #color-selected span {
+          resize: none;
+          outline: none;
+          align-self: center;
+          color: gray;
+          white-space: nowrap; }
+      .text-tab .holder .color-block .color-buttons {
+        display: flex;
+        justify-content: space-between; }
+        .text-tab .holder .color-block .color-buttons #apply-text {
+          width: 48%;
+          background-color: #F89622 !important; }
+          .text-tab .holder .color-block .color-buttons #apply-text button {
+            background-color: transparent;
+            color: white;
+            text-transform: uppercase;
+            cursor: pointer; }
+        .text-tab .holder .color-block .color-buttons #clear-text {
+          width: 48%; }
+          .text-tab .holder .color-block .color-buttons #clear-text button {
+            background-color: transparent;
+            color: #003358;
+            text-transform: uppercase;
+            cursor: pointer; }
+  .text-tab.active {
+    display: flex;
+    visibility: visible; }
+  .text-tab h3 {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center; }
+  .text-tab div.inputs {
+    /* autoprefixer grid: autoplace */
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 22% 26% 14% 14% 14%;
+    grid-template-rows: 60px repeat(5, auto);
+    grid-gap: 20px 10px;
+    grid-template-areas: "label1 text text text text" "label2 style style style style" "label3 size size size size" "label4 align align align align" "label5 color color color color" ". hex r g b"; }
+    .text-tab div.inputs p {
+      font-size: 12px;
+      line-height: 1; }
+    .text-tab div.inputs textarea, .text-tab div.inputs input, .text-tab div.inputs select {
+      width: 100%;
+      font-size: 12px;
+      padding: 3px;
+      border: solid 1px #C9C9C9; }
+    .text-tab div.inputs textarea {
+      height: 100%;
+      resize: none;
+      overflow: auto; }
+    .text-tab div.inputs span {
+      font-size: 10px;
+      font-style: italic; }
+    .text-tab div.inputs #alignment div {
+      display: inline;
+      height: 30px;
+      width: 30px;
+      margin-right: 20px;
+      cursor: pointer; }
+      .text-tab div.inputs #alignment div path {
+        fill: #c9c9c9; }
+      .text-tab div.inputs #alignment div.active path {
+        fill: #003358; }
+    .text-tab div.inputs .labels {
+      grid-column-start: 1;
+      grid-column-end: 2; }
+    .text-tab div.inputs .content {
+      grid-column-start: 2;
+      grid-column-end: 6; }
+    .text-tab div.inputs .item-a {
+      grid-area: label1; }
+    .text-tab div.inputs .item-b {
+      grid-area: text; }
+    .text-tab div.inputs .item-c {
+      grid-area: label2; }
+    .text-tab div.inputs .item-d {
+      grid-area: style; }
+    .text-tab div.inputs .item-e {
+      grid-area: label3; }
+    .text-tab div.inputs .item-f {
+      grid-area: size; }
+    .text-tab div.inputs .item-h {
+      grid-area: label4; }
+    .text-tab div.inputs .item-i {
+      grid-area: align; }
+    .text-tab div.inputs .item-j {
+      grid-area: label5; }
+    .text-tab div.inputs .item-k {
+      grid-area: color; }
+    .text-tab div.inputs .item-l {
+      grid-area: hex;
+      position: relative; }
+      .text-tab div.inputs .item-l span {
+        position: absolute;
+        bottom: 2px;
+        left: 4px;
+        font-size: 12px; }
+      .text-tab div.inputs .item-l input {
+        padding-left: 12px; }
+    .text-tab div.inputs .item-m {
+      grid-area: r; }
+    .text-tab div.inputs .item-n {
+      grid-area: g; }
+    .text-tab div.inputs .item-o {
+      grid-area: b; }
+
+div.inputs .item-k div#colorOptions {
+  position: relative;
+  border: solid 1px #C9C9C9;
+  padding: 40px 30px 30px; }
+  div.inputs .item-k div#colorOptions div.colorButton {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center; }
+    div.inputs .item-k div#colorOptions div.colorButton p {
+      white-space: nowrap;
+      margin-left: 5px;
+      font-weight: 700;
+      font-size: 10px; }
+    div.inputs .item-k div#colorOptions div.colorButton img {
+      height: 100%;
+      width: 100%; }
+
+div.inputs .item-k #canvas, div.inputs .item-k #palette {
+  height: 160px;
+  width: 240px;
+  display: none; }
+
+div.inputs .item-k #canvas.active {
+  display: block; }
+  div.inputs .item-k #canvas.active canvas {
+    width: 100%;
+    height: 100%;
+    margin-top: 5px; }
+
+div.inputs .item-k #palette {
+  grid-gap: 12px;
+  grid-template-columns: auto auto auto auto auto auto;
+  grid-template-rows: auto auto auto auto;
+  grid-auto-flow: row; }
+  div.inputs .item-k #palette.active {
+    display: grid; }
+  div.inputs .item-k #palette div {
+    width: 30px;
+    height: 30px;
+    cursor: pointer; }
